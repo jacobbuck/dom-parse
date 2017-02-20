@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function domify(markup) {
+module.exports = function domParse(markup) {
 	var doc;
 
 	if (typeof markup !== 'string') {
