@@ -1,17 +1,17 @@
 {
   "name": "dom-parse",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Safely parse HTML string into DOM using DOMParser or falling back to DOMImplementation.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jacobbuck/html-parse.git"
+    "url": "git+https://github.com/jacobbuck/dom-parse.git"
   },
   "keywords": ["dom", "domparser", "html", "parse", "parser"],
   "author": "Jacob BUck <buck.jacob@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jacobbuck/html-parse/issues"
+    "url": "https://github.com/jacobbuck/dom-parse/issues"
   },
-  "homepage": "https://github.com/jacobbuck/html-parse"
+  "homepage": "https://github.com/jacobbuck/dom-parse"
 }
