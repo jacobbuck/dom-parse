@@ -16,21 +16,23 @@ module.exports = function domParse(markup, options) {
 
   if (doc && doc.getElementsByTagName('parsererror').length) return false;
 
-  if (strict) {
-    doc = document.implementation.createDocument(
-      'http://www.w3.org/1999/xhtml',
-      'html',
-      document.implementation.createDocumentType('html', null, null)
-    );
-    doc.documentElement.appendChild(doc.createElement('body'));
-  } else {
-    doc = document.implementation.createHTMLDocument('');
-  }
+  if (!doc) {
+    if (strict) {
+      doc = document.implementation.createDocument(
+        'http://www.w3.org/1999/xhtml',
+        'html',
+        document.implementation.createDocumentType('html', null, null)
+      );
+      doc.documentElement.appendChild(doc.createElement('body'));
+    } else {
+      doc = document.implementation.createHTMLDocument('');
+    }
 
-  try {
-    doc.body.innerHTML = markup;
-  } catch (e) {
-    return false;
+    try {
+      doc.body.innerHTML = markup;
+    } catch (e) {
+      return false;
+    }
   }
 
   return doc.getElementsByTagName('body')[0].childNodes;
