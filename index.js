@@ -3,9 +3,7 @@
 module.exports = function domParse(markup) {
   var doc;
 
-  if (typeof markup !== 'string') {
-    return false;
-  }
+  if (typeof markup !== 'string') return false;
 
   if (markup.toLowerCase().indexOf('<!doctype') > -1) {
     markup = '<!doctype html>\n<html><body>'+markup+'</body></html>';
@@ -22,9 +20,7 @@ module.exports = function domParse(markup) {
     doc.close();
   }
 
-  if (!doc) {
-    return false;
-  }
+  if (!doc) return false;
 
   return doc.body.childNodes;
 };
