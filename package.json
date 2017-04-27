@@ -1,6 +1,6 @@
 {
   "name": "dom-parse",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Safely parse HTML string into DOM using DOMParser or falling back to DOMImplementation.",
   "main": "index.js",
   "repository": {
