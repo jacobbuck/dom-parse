@@ -5,9 +5,7 @@ module.exports = function domParse(markup) {
 
   if (typeof markup !== 'string') return false;
 
-  if (markup.toLowerCase().indexOf('<!doctype') > -1) {
-    markup = '<!doctype html>\n<html><body>'+markup+'</body></html>';
-  }
+  markup = '<!DOCTYPE html>\n<html><body>'+markup+'</body></html>';
 
   try {
     doc = new DOMParser().parseFromString(markup, 'text/html');
@@ -22,5 +20,5 @@ module.exports = function domParse(markup) {
 
   if (!doc) return false;
 
-  return doc.body.childNodes;
+  return doc.getElementsByTagName('body')[0].childNodes;
 };
