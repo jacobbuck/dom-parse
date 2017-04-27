@@ -1,21 +1,25 @@
 'use strict';
 
 module.exports = function domParse(markup) {
-  var doc;
-
   if (typeof markup !== 'string') return false;
 
-  markup = '<!DOCTYPE html>\n<html><body>'+markup+'</body></html>';
+  var doc;
+  var wrappedMarkup = '<!DOCTYPE html>\n<html><body>'+markup+'</body></html>';
 
   try {
-    doc = new DOMParser().parseFromString(markup, 'text/html');
+    doc = new DOMParser().parseFromString(wrappedMarkup, 'application/xhtml+xml');
   } catch (e) {}
 
+  if (doc && doc.getElementsByTagName('parsererror').length) return false;
+
   if (!doc) {
-    doc = document.implementation.createHTMLDocument('');
-    doc.open();
-    doc.write(markup);
-    doc.close();
+    doc = document.implementation.createDocument(
+      'http://www.w3.org/1999/xhtml',
+      'html',
+      document.implementation.createDocumentType('html', null, null)
+    );
+    doc.documentElement.appendChild(doc.createElement('body'));
+    doc.body.innerHTML = markup;
   }
 
   if (!doc) return false;
