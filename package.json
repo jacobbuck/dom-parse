@@ -7,8 +7,15 @@
     "type": "git",
     "url": "git+https://github.com/jacobbuck/dom-parse.git"
   },
-  "keywords": ["dom", "domparser", "html", "parse", "parser"],
-  "author": "Jacob BUck <buck.jacob@gmail.com>",
+  "keywords": [
+    "dom",
+    "domparser",
+    "html",
+    "parse",
+    "parser",
+    "xhtml"
+  ],
+  "author": "Jacob Buck <buck.jacob@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jacobbuck/dom-parse/issues"
