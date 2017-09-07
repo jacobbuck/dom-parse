@@ -1,31 +1,31 @@
-'use strict';
+const domParse = (markup, { strict = false }) => {
+  if (typeof markup !== "string") {
+    return false;
+  }
 
-module.exports = function domParse(markup, options) {
-  options = options || {};
-
-  if (typeof markup !== 'string') return false;
-
-  var doc;
-  var strict = options.strict !== false;
-  var mime = strict ? 'application/xhtml+xml' : 'text/html';
-  var wrappedMarkup = '<!DOCTYPE html>\n<html><body>'+markup+'</body></html>';
+  let doc;
 
   try {
-    doc = new DOMParser().parseFromString(wrappedMarkup, mime);
+    doc = new DOMParser().parseFromString(
+      `<!DOCTYPE html>\n<html><body>${markup}</body></html>`,
+      strict ? "application/xhtml+xml" : "text/html"
+    );
   } catch (e) {}
 
-  if (doc && doc.getElementsByTagName('parsererror').length) return false;
+  if (doc && doc.getElementsByTagName("parsererror").length) {
+    return false;
+  }
 
   if (!doc) {
     if (strict) {
       doc = document.implementation.createDocument(
-        'http://www.w3.org/1999/xhtml',
-        'html',
-        document.implementation.createDocumentType('html', null, null)
+        "http://www.w3.org/1999/xhtml",
+        "html",
+        document.implementation.createDocumentType("html", null, null)
       );
-      doc.documentElement.appendChild(doc.createElement('body'));
+      doc.documentElement.appendChild(doc.createElement("body"));
     } else {
-      doc = document.implementation.createHTMLDocument('');
+      doc = document.implementation.createHTMLDocument("");
     }
 
     try {
@@ -35,5 +35,7 @@ module.exports = function domParse(markup, options) {
     }
   }
 
-  return doc.getElementsByTagName('body')[0].childNodes;
+  return doc.getElementsByTagName("body")[0].childNodes;
 };
+
+export default domParse;
