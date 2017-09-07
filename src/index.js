@@ -1,4 +1,4 @@
-const domParse = (markup, { strict = false }) => {
+const domParse = (markup, { strict = true }) => {
   if (typeof markup !== "string") {
     return false;
   }
