@@ -48,3 +48,7 @@ domParse('<img src="dealwithit.gif">', { strict: false });
 domParse('<p>Some lazy markup');
 // returns [p]
 ```
+
+## Node.js
+
+Uses DOMParser from [xmldom](https://npm.im/xmldom).
