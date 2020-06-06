@@ -7,13 +7,6 @@ const getParser = () => {
   return parser;
 };
 
-const handleParserError = (document) => {
-  const parserError = document.querySelector('parsererror');
-  if (parserError) {
-    throw new Error(parserError.textContent);
-  }
-};
-
 const wrapMarkup = (markup) =>
   `<!DOCTYPE html>\n<html><body>${markup}</body></html>`;
 
@@ -23,8 +16,6 @@ const parseDom = (markup) => {
   }
 
   const document = getParser().parseFromString(wrapMarkup(markup), 'text/html');
-
-  handleParserError(document);
 
   return document.querySelector('body').childNodes;
 };
