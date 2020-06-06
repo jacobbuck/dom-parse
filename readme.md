@@ -1,6 +1,6 @@
 # dom-parse
 
-Isomorphic library to safely parse an HTML string into DOM.
+Isomorphic library to safely parse an HTML string into DOM tree.
 
 Uses native `DOMParser` in browser and `JSDOM` on server.
 

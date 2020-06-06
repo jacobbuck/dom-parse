@@ -1,7 +1,7 @@
 {
   "name": "dom-parse",
   "version": "1.2.1",
-  "description": "Safely parse HTML string into DOM using DOMParser or falling back to DOMImplementation.",
+  "description": "Isomorphic library to safely parse an HTML string into DOM tree.",
   "browser": "lib/browser.js",
   "main": "lib/browser.js",
   "module": "lib/server.js",
