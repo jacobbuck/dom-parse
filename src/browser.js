@@ -1,6 +1,4 @@
-const domParse = (markup, options = {}) => {
-  const { strict = true } = options;
-
+const domParse = (markup) => {
   if (typeof markup !== 'string') {
     return false;
   }
@@ -8,7 +6,7 @@ const domParse = (markup, options = {}) => {
   let doc;
 
   try {
-    doc = new DOMParser().parseFromString(
+    doc = new window.DOMParser().parseFromString(
       `<!DOCTYPE html>\n<html><body>${markup}</body></html>`,
       strict ? 'application/xhtml+xml' : 'text/html'
     );
@@ -19,17 +17,7 @@ const domParse = (markup, options = {}) => {
   }
 
   if (!doc) {
-    if (strict) {
-      doc = document.implementation.createDocument(
-        'http://www.w3.org/1999/xhtml',
-        'html',
-        document.implementation.createDocumentType('html', null, null)
-      );
-      doc.documentElement.appendChild(doc.createElement('body'));
-    } else {
-      doc = document.implementation.createHTMLDocument('');
-    }
-
+    doc = document.implementation.createHTMLDocument('');
     try {
       doc.body.innerHTML = markup;
     } catch (e) {
@@ -40,4 +28,4 @@ const domParse = (markup, options = {}) => {
   return doc.getElementsByTagName('body')[0].childNodes;
 };
 
-export default domParse(window.DOMParser);
+export default domParse;
