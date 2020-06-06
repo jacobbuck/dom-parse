@@ -2,11 +2,15 @@
   "name": "dom-parse",
   "version": "1.2.1",
   "description": "Safely parse HTML string into DOM using DOMParser or falling back to DOMImplementation.",
-  "main": "lib/node.js",
   "browser": "lib/browser.js",
+  "main": "lib/browser.js",
+  "module": "lib/server.js",
   "files": [
     "lib"
   ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "build": "rollup -c",
     "prepare": "npm run build",
@@ -32,11 +36,6 @@
   "dependencies": {
     "jsdom": "^16.2.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
@@ -45,5 +44,10 @@
     "prettier": "^2.0.5",
     "rollup": "^2.13.1",
     "rollup-plugin-babel": "^4.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
