@@ -1,31 +1,32 @@
+let parser = null;
+
+const getParser = () => {
+  if (parser === null) {
+    parser = new window.DOMParser();
+  }
+  return parser;
+};
+
+const handleParserError = (document) => {
+  const parserError = doc.querySelector('parsererror');
+  if (parserError) {
+    throw new Error(parserError.textContent);
+  }
+};
+
+const wrapMarkup = (markup) =>
+  `<!DOCTYPE html>\n<html><body>${markup}</body></html>`;
+
 const domParse = (markup) => {
   if (typeof markup !== 'string') {
-    return false;
+    throw new TypeError('Expected parameter "markup" to be a string.');
   }
 
-  let doc;
+  const document = getParser().parseFromString(wrapMarkup(markup), 'text/html');
 
-  try {
-    doc = new window.DOMParser().parseFromString(
-      `<!DOCTYPE html>\n<html><body>${markup}</body></html>`,
-      strict ? 'application/xhtml+xml' : 'text/html'
-    );
-  } catch (e) {}
+  handleParserError(document);
 
-  if (doc && doc.getElementsByTagName('parsererror').length) {
-    return false;
-  }
-
-  if (!doc) {
-    doc = document.implementation.createHTMLDocument('');
-    try {
-      doc.body.innerHTML = markup;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  return doc.getElementsByTagName('body')[0].childNodes;
+  return document.querySelector('body').childNodes;
 };
 
 export default domParse;
