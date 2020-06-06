@@ -23,6 +23,6 @@ parseDom(markup);
 ```js
 import parseDom from 'dom-parse';
 
-parseDom('Some <em>awesome</em> markup <img src="explosion.gif" />');
+parseDom('Some <em>awesome</em> markup <img src="explosion.gif">');
 // returns [#text, <em>, #text, <img>]
 ```
