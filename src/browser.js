@@ -8,7 +8,7 @@ const getParser = () => {
 };
 
 const handleParserError = (document) => {
-  const parserError = doc.querySelector('parsererror');
+  const parserError = document.querySelector('parsererror');
   if (parserError) {
     throw new Error(parserError.textContent);
   }
