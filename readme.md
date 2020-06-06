@@ -7,7 +7,7 @@ Uses native `DOMParser` in browser and `JSDOM` on server.
 ## Usage
 
 ```js
-domParse(markup);
+parseDom(markup);
 ```
 
 ### Parameters
@@ -21,8 +21,8 @@ domParse(markup);
 ## Example
 
 ```js
-import domParse from 'dom-parse';
+import parseDom from 'dom-parse';
 
-domParse('Some <em>awesome</em> markup <img src="explosion.gif" />');
+parseDom('Some <em>awesome</em> markup <img src="explosion.gif" />');
 // returns [#text, <em>, #text, <img>]
 ```

@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
 
-const domParse = (markup) => JSDOM.fragment(markup).childNodes;
+const parseDom = (markup) => JSDOM.fragment(markup).childNodes;
 
-export default domParse;
+export default parseDom;
