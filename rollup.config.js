@@ -8,9 +8,9 @@ export default [
     plugins: [babel()],
   },
   {
-    input: 'src/node.js',
+    input: 'src/server.js',
     output: { file: 'lib/server.js', format: 'cjs' },
-    external: ['xmldom'],
+    external: ['jsdom'],
     plugins: [babel()],
   },
 ];
