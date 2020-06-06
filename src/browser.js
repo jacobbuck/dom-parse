@@ -17,7 +17,7 @@ const handleParserError = (document) => {
 const wrapMarkup = (markup) =>
   `<!DOCTYPE html>\n<html><body>${markup}</body></html>`;
 
-const domParse = (markup) => {
+const parseDom = (markup) => {
   if (typeof markup !== 'string') {
     throw new TypeError('Expected parameter "markup" to be a string.');
   }
@@ -29,4 +29,4 @@ const domParse = (markup) => {
   return document.querySelector('body').childNodes;
 };
 
-export default domParse;
+export default parseDom;
