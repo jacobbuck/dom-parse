@@ -1,7 +1,7 @@
-const domParse = DOMParser => (markup, options = {}) => {
+const domParse = (DOMParser) => (markup, options = {}) => {
   const { strict = true } = options;
 
-  if (typeof markup !== "string") {
+  if (typeof markup !== 'string') {
     return false;
   }
 
@@ -10,24 +10,24 @@ const domParse = DOMParser => (markup, options = {}) => {
   try {
     doc = new DOMParser().parseFromString(
       `<!DOCTYPE html>\n<html><body>${markup}</body></html>`,
-      strict ? "application/xhtml+xml" : "text/html"
+      strict ? 'application/xhtml+xml' : 'text/html'
     );
   } catch (e) {}
 
-  if (doc && doc.getElementsByTagName("parsererror").length) {
+  if (doc && doc.getElementsByTagName('parsererror').length) {
     return false;
   }
 
   if (!doc) {
     if (strict) {
       doc = document.implementation.createDocument(
-        "http://www.w3.org/1999/xhtml",
-        "html",
-        document.implementation.createDocumentType("html", null, null)
+        'http://www.w3.org/1999/xhtml',
+        'html',
+        document.implementation.createDocumentType('html', null, null)
       );
-      doc.documentElement.appendChild(doc.createElement("body"));
+      doc.documentElement.appendChild(doc.createElement('body'));
     } else {
-      doc = document.implementation.createHTMLDocument("");
+      doc = document.implementation.createHTMLDocument('');
     }
 
     try {
@@ -37,7 +37,7 @@ const domParse = DOMParser => (markup, options = {}) => {
     }
   }
 
-  return doc.getElementsByTagName("body")[0].childNodes;
+  return doc.getElementsByTagName('body')[0].childNodes;
 };
 
 export default domParse;
