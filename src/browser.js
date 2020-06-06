@@ -10,14 +10,9 @@ const getParser = () => {
 const wrapMarkup = (markup) =>
   `<!DOCTYPE html>\n<html><body>${markup}</body></html>`;
 
-const parseDom = (markup) => {
-  if (typeof markup !== 'string') {
-    throw new TypeError('Expected parameter "markup" to be a string.');
-  }
-
-  const document = getParser().parseFromString(wrapMarkup(markup), 'text/html');
-
-  return document.querySelector('body').childNodes;
-};
+const parseDom = (markup) =>
+  getParser()
+    .parseFromString(wrapMarkup(markup), 'text/html')
+    .querySelector('body').childNodes;
 
 export default parseDom;
