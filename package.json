@@ -2,9 +2,12 @@
   "name": "dom-parse",
   "version": "2.0.0",
   "description": "Isomorphic library to safely parse an HTML string into DOM tree.",
-  "browser": "lib/browser.js",
-  "main": "lib/browser.js",
-  "module": "lib/server.js",
+  "main": "lib/server.cjs.js",
+  "module": "lib/server.esm.js",
+  "browser": {
+    "./lib/server.cjs.js": "./lib/browser.cjs.js",
+    "./lib/server.esm.js": "./lib/browser.esm.js"
+  },
   "files": [
     "lib"
   ],
