@@ -7,7 +7,7 @@ export default [
       { file: 'lib/browser.cjs.js', format: 'cjs' },
       { file: 'lib/browser.esm.js', format: 'esm' },
     ],
-    plugins: [babel()],
+    plugins: [babel({ babelHelpers: 'bundled' })],
   },
   {
     input: 'src/server.js',
@@ -16,6 +16,6 @@ export default [
       { file: 'lib/server.esm.js', format: 'esm' },
     ],
     external: ['jsdom'],
-    plugins: [babel()],
+    plugins: [babel({ babelHelpers: 'bundled' })],
   },
 ];
