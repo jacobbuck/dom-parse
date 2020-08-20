@@ -70,7 +70,7 @@
 
 ### Changed
 
-- Refactored internally to ES2015 syntax.
+- Refactored internals into ES2015 syntax.
 
 ## v1.0.1 - 2017-04-28
 
