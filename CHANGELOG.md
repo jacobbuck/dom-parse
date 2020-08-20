@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Bumped up version of [jsdom](https://www.npmjs.com/package/@babel/runtime) to v16.4.0.
+- Bumped up version of [jsdom](https://www.npmjs.com/package/jsdom) to v16.4.0.
 - Updated devDependencies.
 
 ## v2.0.2 - 2020-06-26
