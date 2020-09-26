@@ -19,9 +19,7 @@
     "format": "prettier --write .",
     "prepare": "npm run build",
     "prepublishOnly": "npm run test",
-    "test": "npm-run-all -p test:*",
-    "test:browser": "jest --coverage --env=jsdom src/__tests__/browser.test.js",
-    "test:server": "jest --coverage --env=node src/__tests__/server.test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

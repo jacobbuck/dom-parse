@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import parseDom from '../browser';
 
 test('parses HTML string to DOM Node tree', () => {
