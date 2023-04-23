@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/jacobbuck/dom-parse",
   "dependencies": {
-    "jsdom": "^16.4.0"
+    "happy-dom": "^9.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
