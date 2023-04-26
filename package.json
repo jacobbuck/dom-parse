@@ -64,6 +64,6 @@
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
-    "vite": "^4.2.1"
+    "vite": "^4.3.2"
   }
 }
