@@ -1,10 +1,10 @@
 /**
- * @jest-environment jsdom
+ * @jest-environment node
  */
-import { parse } from '../index';
+import { parse } from '../node';
 
 test('parses HTML string to DOM Node tree', () => {
-  expect(parse('Some <em>awesome</em> markup <img src="explosion.gif">'))
+  expect(parse('Some <EM>awesome</EM> markup <img src="explosion.gif">'))
     .toMatchInlineSnapshot(`
     <DocumentFragment>
       Some 
