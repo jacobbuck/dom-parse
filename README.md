@@ -1,6 +1,6 @@
 # dom-parse
 
-Safely parse an HTML or XML (including MathML, SVG, XHTML) string into a document object.
+Parse an HTML or XML (including MathML, SVG, XHTML) string into a document object.
 
 ## Usage
 
