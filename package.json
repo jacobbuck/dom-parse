@@ -8,6 +8,7 @@
   ],
   "main": "./dist/node.cjs",
   "module": "./dist/node.js",
+  "browser": "./dist/browser.js",
   "exports": {
     ".": {
       "browser": {
