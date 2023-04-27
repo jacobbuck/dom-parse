@@ -1,28 +1,30 @@
 # dom-parse
 
-Isomorphic library to safely parse an HTML string into DOM tree.
-
-Uses native `DOMParser` in browser and `JSDOM` on server.
+Safely parse an HTML/XML string into DOM tree.
 
 ## Usage
 
 ```js
-parseDom(markup);
+import { parse } from 'dom-parse';
+
+parse(markup);
 ```
+
+Uses the [HTML template element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) in browsers and [Happy DOM](https://github.com/capricorn86/happy-dom) in Node.js.
 
 ### Parameters
 
-- `markup` string of HTML you'd like to parse.
+- `markup` string of HTML/XML you'd like to parse.
 
 ### Return value
 
-`NodeList` containing Node structure of HTML parsed.
+[`DocumentFragment`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) containing Node structure of HTML/XML parsed.
 
 ## Example
 
 ```js
-import parseDom from 'dom-parse';
+import { parse } from 'dom-parse';
 
-parseDom('Some <em>awesome</em> markup <img src="explosion.gif">');
-// returns [#text, <em>, #text, <img>]
+parse('Some <em>awesome</em> markup <img src="explosion.gif">');
+// returns DocumentFragment(4) [ #text, em, #text, img ]
 ```
