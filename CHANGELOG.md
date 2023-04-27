@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- **BREAKING** Exports named module instead of default.
+- **BREAKING** Returns `DocumentElement` instead of `NodeList`.
+- Use [HTML template element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) instead of [DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser) for parsing in browser.
+- Use [happy-dom](https://www.npmjs.com/package/happy-dom) instead of [jsdom](https://www.npmjs.com/package/jsdom) for parsing in Node.js.
+
+### Changed
+
 ## v2.1.0 - 2020-11-08
 
 ### Added
