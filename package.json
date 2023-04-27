@@ -1,7 +1,7 @@
 {
   "name": "dom-parse",
   "version": "2.1.0",
-  "description": "Safely parse HTML or XML to a document object",
+  "description": "HTML/XML to DOM parser for browsers and Node.js",
   "type": "module",
   "files": [
     "dist"
