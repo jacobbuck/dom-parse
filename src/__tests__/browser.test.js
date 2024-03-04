@@ -1,4 +1,4 @@
-// @vitest-environment happy-dom
+// @vitest-environment jsdom
 import { expect, test } from 'vitest';
 import { parse } from '../browser';
 

@@ -10,7 +10,7 @@ export default defineConfig({
       ],
     },
     rollupOptions: {
-      external: ['happy-dom'],
+      external: ['jsdom'],
     },
     sourcemap: true,
   },

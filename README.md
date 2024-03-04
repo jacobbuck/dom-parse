@@ -2,7 +2,7 @@
 
 Parse a string of HTML or XML (including MathML, SVG, XHTML) into a document object.
 
-Uses the [HTML template element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) in browsers and [Happy DOM](https://github.com/capricorn86/happy-dom) in Node.js.
+Uses the [HTML template element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) in browsers and [jsdom](https://github.com/jsdom/jsdom) in Node.js.
 
 ## Usage
 
