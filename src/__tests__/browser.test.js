@@ -1,6 +1,5 @@
-/**
- * @jest-environment jsdom
- */
+// @vitest-environment happy-dom
+import { expect, test } from 'vitest';
 import { parse } from '../browser';
 
 test('parses HTML string to DOM Node tree', () => {

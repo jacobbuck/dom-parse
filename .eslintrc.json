@@ -1,20 +1,19 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
-    "jest": true,
+    "es2020": true,
     "node": true
   },
   "extends": [
     "eslint:recommended",
-    "plugin:jest/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:vitest/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["jest", "prettier"],
+  "plugins": ["prettier", "vitest"],
   "rules": {
     "prettier/prettier": ["error", { "singleQuote": true }]
   }

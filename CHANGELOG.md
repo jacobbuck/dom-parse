@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Support any version of happy-dom.
+
 ## v3.0.0 - 2023-06-15
 
 ### Changed

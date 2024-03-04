@@ -1,6 +1,4 @@
-/**
- * @jest-environment node
- */
+import { expect, test } from 'vitest';
 import { parse } from '../node';
 
 test('parses HTML string to DOM Node tree', () => {
