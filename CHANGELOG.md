@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Support more versions of jsdom.
+
 ## v3.2.0 - 2024-03-05
 
 ### Changed
